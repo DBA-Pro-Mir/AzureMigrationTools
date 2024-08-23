@@ -1,22 +1,30 @@
 # AzureMigrationTools
 Database Migration to Azure SQL Database Elastic Pool
 
+
+![GitHub](https://img.shields.io/github/license/DBA-Pro-Mir/AzureMigrationTools)
+![GitHub last commit](https://img.shields.io/github/last-commit/DBA-Pro-Mir/AzureMigrationTools)
+![GitHub issues](https://img.shields.io/github/issues/DBA-Pro-Mir/AzureMigrationTools)
+![GitHub forks](https://img.shields.io/github/forks/DBA-Pro-Mir/AzureMigrationTools?style=social)
+![GitHub stars](https://img.shields.io/github/stars/DBA-Pro-Mir/AzureMigrationTools?style=social)
+
+
 # Overview
 This repository contains a PowerShell script designed to automate the migration of multiple on-premises SQL Server databases to an Azure SQL Database Elastic Pool. The script handles the process from exporting each database to a BACPAC file, importing it into Azure SQL Database, and finally moving the database into a specified Elastic Pool.
 
 # Features
-🚀 Automated Database Migration: Streamline the migration of multiple databases with a single script, reducing manual tasks and ensuring consistency.
-🔒 Customizable Connection Strings: Supports secure connections to SQL Server, including options to trust unverified SSL certificates.
-⚠️ Error Handling: The script includes robust error handling, allowing it to skip databases that fail to export and continue with the rest.
-🏗️ Elastic Pool Integration: Automatically moves each imported database into a specified Azure SQL Database Elastic Pool.
-📜 Logging and Output: Provides detailed output for each step, making it easy to monitor and troubleshoot the migration process.
+- 🚀 Automated Database Migration: Streamline the migration of multiple databases with a single script, reducing manual tasks and ensuring consistency.
+- 🔒 Customizable Connection Strings: Supports secure connections to SQL Server, including options to trust unverified SSL certificates.
+- ⚠️ Error Handling: The script includes robust error handling, allowing it to skip databases that fail to export and continue with the rest.
+- 🏗️ Elastic Pool Integration: Automatically moves each imported database into a specified Azure SQL Database Elastic Pool.
+- 📜 Logging and Output: Provides detailed output for each step, making it easy to monitor and troubleshoot the migration process.
 
 # Prerequisites
 
-**PowerShell:** Ensure PowerShell is installed and available on your system.
-**SQLPackage:** Install the sqlpackage utility to handle BACPAC exports and imports.
-**SQL Server Management Studio (SSMS):** Optional but recommended for database assessments and post-migration validation.
-**Azure SQL Database:**  Ensure you have an Azure SQL Server instance with an Elastic Pool configured for the target databases.
+-  **PowerShell:** Ensure PowerShell is installed and available on your system.
+-  **SQLPackage:** Install the sqlpackage utility to handle BACPAC exports and imports.
+-  **SQL Server Management Studio (SSMS):** Optional but recommended for database assessments and post-migration validation.
+-  **Azure SQL Database:**  Ensure you have an Azure SQL Server instance with an Elastic Pool configured for the target databases.
 
 
 # Update the Script:
