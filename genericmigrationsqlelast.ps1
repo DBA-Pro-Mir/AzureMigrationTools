@@ -1,3 +1,46 @@
+<# Tools For Migration To Azure customized
+
+
+Explanation of the Script:
+Variables:
+
+$SourceServerName: The name or IP address of your on-premises SQL Server.
+$YourUsername and $YourPassword: Credentials for your on-premises SQL Server.
+$AzureServerName: The name of your Azure SQL Server.
+$ElasticPoolName: The name of the Elastic Pool where the databases will be moved.
+$AzureUser and $AzurePassword: Credentials for your Azure SQL Server.
+Databases List:
+
+$Databases: An array containing the names of the databases you want to migrate.
+Exporting Databases:
+
+The script uses sqlpackage to export each database to a BACPAC file, stored in the specified directory.
+Importing to Azure:
+
+After exporting, the script imports each BACPAC file into Azure SQL Database.
+Moving to Elastic Pool:
+
+Once the database is imported, it's moved into the specified Elastic Pool using the ALTER DATABASE T-SQL command.
+Error Handling:
+
+The script includes basic error handling, skipping databases if the export fails and continuing to the next database.
+How to Use the Script:
+Update the Script:
+
+Replace the placeholders with your actual server names, credentials, and database names.
+Run the Script:
+
+Run the script in PowerShell on a machine that has access to both your on-premises SQL Server and Azure SQL Server.
+Monitor the Output:
+
+The script will provide output for each step, showing the progress of the migration for each database.
+This script provides a generalized way to migrate multiple databases from an on-premises SQL Server to an Azure SQL Database Elastic Pool, automating much of the process to save time and reduce manual effort.
+
+
+
+ #>
+
+
 # Define variables for the on-premises SQL Server
 $SourceServerName = "YourOnPremServerName"          # On-premises SQL Server name or IP address
 $YourUsername = "YourUsername"                      # SQL Server Username
