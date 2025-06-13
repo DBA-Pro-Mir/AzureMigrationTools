@@ -38,6 +38,26 @@ Open the script and update it with your specific server names, credentials, and 
 
 Follow the output in PowerShell to ensure that each database is migrated successfully.
 
+## Single Database Example
+In addition to `genericmigrationsqlelast.ps1`, you can migrate a single database
+by using `migrateSingleDatabase.ps1`. The script accepts parameters so you can
+specify the source and destination settings at run time:
+
+```powershell
+./migrateSingleDatabase.ps1 `
+    -SourceServerName "OnPremServer" `
+    -SourceUsername "sa" `
+    -SourcePassword "P@ssword" `
+    -DatabaseName "MyDatabase" `
+    -AzureServerName "myserver.database.windows.net" `
+    -AzureUser "sqladmin" `
+    -AzurePassword "AzurePass" `
+    -ElasticPoolName "MyElasticPool"
+```
+
+The script exports the specified database to a BACPAC file, imports it into
+Azure SQL Database, and finally moves it into the target Elastic Pool.
+
 # Contributing
 Contributions are welcome! If you have suggestions for improvements or additional features, feel free to fork the repository, make your changes, and submit a pull request.
 
